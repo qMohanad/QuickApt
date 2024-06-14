@@ -1,0 +1,798 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap');
+
+body{
+    margin: 0;
+    background-color:#eee;
+    transition: 0.5s all;
+    overflow-y: scroll;
+    font-family: "Poppins";
+}
+
+body.ar{
+    font-family: "Baloo Bhaijaan 2";
+}body.dark.ar{
+    font-family: "Baloo Bhaijaan 2";
+}body.dark{
+    font-family: "Poppins";
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+body.dark{
+    background-color:#000000;
+}
+body.dark > .container .Aptlist .room{
+    background-color: #0a0a0a;
+    color: #eee;
+}body.dark > .container .Aptlist .room .image .reviews .likes , body.dark > .container .Aptlist .room .image .reviews .views{
+    background-color: #0a0a0ad3;
+}body.dark > .container .Aptlist .room .buttons .viewRooms{
+    border: 1px solid #eeeeeeab;
+    color: #eee;
+}
+body.dark > .container .Aptlist .room .buttons .viewRooms:hover{
+    background-color: #eee;
+    border: 1px solid transparent;
+    color: #0a0a0a;
+}body.dark > .container .Aptlist .room .info .apt, body.dark > .container .Aptlist .room .info .price{
+    color: #eee;
+}body.dark > .container .Aptlist .room .info .apt .rooms, body.dark > .container .Aptlist .room .info .price .per{
+    color: #eeeee671;
+}
+
+body.dark > .container header .title {
+    color: #eee;
+}body.dark > .container header .title span {
+    color: #0a0a0a;
+    background-color: #eee;
+}
+body.dark > .container .dark-mode:hover .cover {
+    background-color: #252523;
+}
+body.dark > .container .dark-mode svg {
+    color: #eee;
+}
+
+body.dark > .container .icon-rooms-cart{
+    color: #eee;
+}
+body.dark > .container .icon-rooms-cart:hover{
+    background-color: #252523;
+}
+body.dark > .container .icon-rooms-cart span {
+    color: #0a0a0a;
+    background-color: #eee;
+}
+
+
+
+
+body .loading{
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    overflow-y: hidden;
+    background-color: #eee;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    transition: 1s all ease;
+}
+body.dark .loading{
+    background-color:#000000;
+}
+.loading #loading-prog{
+    margin: auto;
+    height: 8px;
+    border-radius: 35px;
+    width: 0vw;
+    transition: 0.5s all ease;
+}
+body .loading #loading-prog{
+    background-color:#1b1b1a;
+
+}
+body.dark .loading #loading-prog{
+    background-color:#eee;
+}
+
+
+
+
+
+.container{
+    width: 900px;
+    max-width: 90vw;
+    margin: auto;
+    text-align: center;
+    transition: 0.25s all ease;
+}
+header{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    padding-top: 20px;
+}
+
+header .title{
+    width: fit-content;
+    font-size: 16px;
+    font-weight: 400;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+    top: -10%;
+    left: 20%;
+    cursor:default;
+    position: relative;
+}header .title span{
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 400;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    background-color: #353432;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    color: #eee;
+    position: absolute;
+    top: 50%;
+    right: -25%;
+    transition: 0.0s all;
+}
+
+header .dark-mode{
+    width: min-content;
+    height: 36px;
+    top: -10%;
+    left: 195%;
+    margin: auto;
+    display: flex;
+    position: relative;
+    transition: 0.2s all;
+}header .dark-mode input{
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    left: 32%;
+    cursor: pointer;
+    position: inherit;
+}header .dark-mode .cover{
+    width: 36px;
+    height: 36px;
+    z-index: -2;
+    border-radius: 2px;
+    transition: 0.2s all;
+    transform: translateX(200%);
+}
+header .dark-mode:hover > .cover{
+    background-color: #fafafa;
+}
+header .icon-rooms-cart{
+    width: 36px;
+    height: 36px;
+    top: -10%;
+    left: 175%;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+    background-color: #fafafa00;
+    position: relative;
+    border-radius: 2px;
+    transition: 0.2s all;
+}
+header .icon-rooms-cart:hover{
+    background-color: #fafafa;
+}
+header .icon-rooms-cart span{
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 400;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    background-color: #353432;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    color: #eee;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+}
+.Aptlist .room .image img{
+    width: 90%;
+    max-height: 300px;
+    object-fit: cover;
+    padding-top: 2px;
+    border-radius: 4px;
+    transition: 0.2s all;
+}
+.Aptlist .room .image{
+    position: relative;
+    transition: 0.2s all;
+}
+.Aptlist .room .image .reviews{
+    opacity: 0.0;
+    color: #eeeeee00;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s all;
+}
+.Aptlist .room .image .reviews .likes{
+    width: auto;
+    height: 28px;
+    padding: 2px 12px;
+    background-color:#eeeee671;
+    position: absolute;
+    gap: 2px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    top: 50%;
+    left: 50%;
+    transform: translate(15%, -50%);
+    text-wrap: nowrap;
+    transition: 0.3s all;
+}
+.Aptlist .room .image .reviews .views{
+    width: auto;
+    height: 28px;
+    padding: 2px 12px;
+    background-color:#eeeee671;
+    position: absolute;
+    gap: 6px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    top: 50%;
+    left: 50%;
+    transform: translate(-105%, -50%);
+    text-wrap: nowrap;
+    transition: 0.3s all;
+}
+
+.Aptlist .room:hover > .image .reviews{
+    opacity: 1;
+}
+.Aptlist{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+.Aptlist .room{
+    width: auto;
+    display: block;
+    height: fit-content;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 12px;
+    padding-bottom: 16px;
+    border-radius: 4px;
+    background-color: #fafafa;
+    border: 1px solid #35343231;
+    transition: 0.3s all;
+}.Aptlist .room.dark{
+    background-color: #252523;
+}
+
+.Aptlist .room:hover{
+    box-shadow: #1b1b1a42 0px 0 20px;
+    transform: translateY(-2px);
+}
+.Aptlist .room:hover > .image img{
+    filter: blur(0.65px) brightness(0.75);
+}
+
+.Aptlist .room .info{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 14px;
+}
+
+.Aptlist .room .price{
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-right: 20%;
+    font-size: small;
+    color: black;
+}
+.Aptlist .room .price .per{
+    font-weight: 500;
+    letter-spacing: 2px;
+    color:#252523;
+    font-size: small;
+}
+
+.Aptlist .room .apt{
+    font-weight: 500;
+    font-size: small;
+    color: black;
+}
+.Aptlist .room .apt .rooms{
+    font-weight: 500;
+    font-size: small;
+    color:#252523;
+}.Aptlist .room .apt .rooms.dark{
+    color: #eeeeeeab;
+}
+.Aptlist .room .buttons{
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+.Aptlist .room .buttons .addRoom{
+    width: 12%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    background-color: #353432;
+    color: #eee;
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    padding: 0;
+    margin-top: 12px;
+    letter-spacing: 2px;
+    font-size: small;
+    cursor: pointer;
+    transition: 0.3s all;
+}.Aptlist .room .buttons .addRoom.Done{
+    width: 12%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    background-color: #b38020dc;
+    color: #eee;
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    padding: 0;
+    margin-top: 12px;
+    letter-spacing: 2px;
+    font-size: small;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+.Aptlist .room .buttons .addRoom svg{
+    padding-top: 2px;
+    width: 24px;
+    scale: 0.8;
+}
+.Aptlist .room .buttons .addRoom.dark:hover{
+    background-color: #eee;
+    color: #353432;
+}
+.Aptlist .room .buttons .addRoom:hover{
+    background-color: #252523;
+}.Aptlist .room .buttons .addRoom.Done:hover{
+    background-color: #e0ab40;
+}
+
+.Aptlist .room .buttons .viewRooms{
+    width: 44%;
+    background-color: transparent;
+    color: #252523;
+    border-radius: 2px;
+    border: 1px solid #252523;
+    outline: none;
+    padding: 8px;
+    margin-top: 12px;
+    letter-spacing: 2px;
+    font-size: small;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+.Aptlist .room .buttons .viewRooms.dark{
+    border: 1px solid #eeeeeeab;
+    color: #eee;
+}
+.Aptlist .room .buttons .viewRooms:hover{
+    background-color: #b38020dc;
+    border: 1px solid transparent;
+    color: #eee;
+}
+
+.Aptlist .room hr{
+    width: 50%;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+
+.likedTab{
+    width: 400px;
+    background-color:#252523;
+    color: #eee;
+    position:fixed;
+    inset: 0 0 0 auto;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+}
+.likedTab h1{
+    padding: 12px;
+    margin: 0;
+    font-size: 30px;
+    font-weight: 200;
+    text-align: center;
+    font-family: Poppins;
+}
+.likedTab .close{
+    height: 50px;
+    background-color:#eeeee6;
+    border: none;
+    color:black;
+    margin-top: auto;
+    font-weight: 500;
+    letter-spacing: 4px;
+    font-family: Poppins;
+}
+.likedTab hr{
+    height: 0;
+    padding: 0;
+    width: 65%;
+    margin-top: 0;
+}
+
+.likedTab .listRooms .room{
+    display: grid;
+    grid-template-columns:100px 120px 1fr;
+}
+.likedTab .listRooms .room .reviews{
+    display: flex;
+}
+.Aptlist .room .reviews .views{
+    background-color: #b886237a;
+    display: flex;
+    width: 20%;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #eee;
+    justify-content: center;
+    align-items: center;
+}
+.Aptlist .room .reviews .likes{
+    background-color: #353432;
+    display: flex;
+    width: 20%;
+    margin: auto;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #eee;
+    justify-content: center;
+    align-items: center;
+}
+
+.Aptlist .room .image{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+/* #b88623c2 light brown color */
+.roomsTab{
+    width: 400px;
+    height: 100%;
+    background-color: #1b1b1a;
+    color:#eee;
+    position: fixed;
+    top: 0;
+    inset: 0 -500px 0 auto;
+    display: grid;
+    grid-template-rows: 70px 1px 1fr 70px;
+    box-shadow: #1b1b1a -4px 0 32px;
+    transition: 0.25s all ease;
+}
+.roomsTab .RoomsList{
+    overflow: scroll;
+    scroll-behavior:smooth;
+}.roomsTab .RoomsList::-webkit-scrollbar{
+    display: none;
+}
+.roomsTab .close{
+    width: 380px;
+    height: 48px;
+    background-color: transparent;
+    color: #eee;
+    letter-spacing: 3px;
+    font-weight: 200;
+    margin: auto;
+    border-radius: 2px;
+    position:sticky;
+    cursor: pointer;
+    border: 1px solid #eee;
+    transition: 0.2s all;
+}.roomsTab .close:hover{
+    background-color:#b38020dc;
+    color: #eee;
+    border: 1px solid transparent;
+}
+.roomsTab h1{
+    margin: 14px auto;
+    letter-spacing: 3px;
+    font-weight: 200;
+}.roomsTab .RoomsList .room{
+    background-color: #252523;
+    height: fit-content;
+    margin: 8px 8px;
+    border-radius: 2px;
+    display: grid;
+    grid-template-columns: 120px 120px 88px 0px;
+    cursor: pointer;
+    transition: 0.2s all;
+}.roomsTab .RoomsList .room:hover{
+    background-color:#2e2e2e;
+    transform: translateY(-2px);
+    box-shadow: #0c0c0c 0px 0px 16px;
+}
+.roomsTab .room .removeLike{
+    background-color:#eee;
+    /*color: #d89b2a;*/
+    width: 48px;
+    height: 108px;
+    margin: auto 2px;
+    color:#1b1b1a;
+    cursor: pointer;
+    border-radius: 2px;
+    border: none;
+    transition: 0.15s all;
+}.roomsTab .room .removeLike:hover{
+    background-color:#ff2121b6;
+    /*color: #d89b2a;*/
+    color:#eee;
+}
+.roomsTab .room .image{
+    width: 120px;
+    height: 120px;
+    border-radius: 2px;
+}.roomsTab .room .image img{
+    margin: 4px 4px;
+    width: 108px;
+    object-fit: cover;
+    height: 108px;
+    border: 2px solid #eee;
+    box-shadow: #111111 0px 0px 8px;
+}
+
+.roomsTab .room .title{
+    color: #eee;
+    letter-spacing: 3px;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 36px;
+    margin-left: 12px;
+}.roomsTab .room .title .rooms{
+    color: #eeeeeecc;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+.roomsTab .room .price{
+    color: #eee;
+    letter-spacing: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 36px;
+    margin-left: -10px;
+}.roomsTab .room .price .per{
+    color: #eeeeeecc;
+    letter-spacing: 3px;
+    font-size: 14px;
+    font-weight: 300;
+}
+body.showLikedRooms .roomsTab{
+    inset: 0 0 0 auto;
+}
+body.showLikedRooms .container{
+    transform: translateX(-200px);
+}
+
+
+body .footer{
+    width: 100vw;
+    height: 240px;
+    background-color: #111111;
+    margin-top: 80px;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 8vw;
+}
+.footer h1{
+    color: #1b1b1a;
+    font-size: large;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 4px 18px;
+    border-radius: 2px;
+    background-color: #eee;
+}
+body .footer .social .discord{
+    gap: 8px;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    text-align: center;
+    padding: 4px 14px;
+    border-radius: 50px;
+
+    color:#eee;
+    font-size: small;
+    font-weight: 400;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+}
+body .footer .social .discord:hover{
+    color:#0b5fad;
+}
+
+body .footer .social .discord svg{
+    scale: 0.85;
+    /*background-color: #00519c6e;
+    border-radius: 2px;
+    padding: 2px 4px;*/
+}
+
+
+
+
+
+.Aptlist .room .tags{
+    display: grid;
+    grid-template-columns: repeat(3,0.1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.Aptlist .room .tags .tag{
+    background-color: #2e2e2e;
+    border-radius: 35px;
+    width: fit-content;
+    text-wrap: nowrap;
+    padding: 4px 12px;
+    margin-top: 2px;
+    margin-bottom: 4px;
+    color: #eee;
+    font-size: small;
+    font-weight: 300;
+}
+
+
+.filterTab{
+    width: 400px;
+    height: 90%;
+    background-color: #1b1b1a;
+    color:#eee;
+    position: fixed;
+    margin: auto;
+    border-radius: 4px;
+    top: 0;
+    right: 0;
+    
+    box-shadow: #1b1b1a -4px 0 32px;
+    transition: 0.25s all ease;
+}
+
+
+
+
+@media screen and (max-width: 1024px){
+    .Aptlist{
+        grid-template-columns: repeat(2,1fr);
+    }
+    header .dark-mode{
+        left: 180%;
+    }header .icon-rooms-cart{
+        left: 170%;
+    }
+    .roomsTab{
+        height: 100%;
+    }
+}
+@media screen and (max-width: 1024px){
+    .Aptlist{
+        grid-template-columns: repeat(2,1fr);
+    }
+    header .dark-mode{
+        left: 180%;
+    }header .icon-rooms-cart{
+        left: 170%;
+    }
+    .roomsTab{
+        height: 100%;
+    }
+}
+@media screen and (max-width: 720px){
+    .Aptlist{
+        grid-template-columns: repeat(1,1fr);
+    }
+    header .icon-rooms-cart ,header .dark-mode{
+        left: 160%;
+    }
+    .roomsTab{
+        height: 100%;
+    }
+}
+@media screen and (max-width: 560px){
+    header .icon-rooms-cart ,header .dark-mode{
+        left: 150%;
+    }
+}@media screen and (max-width: 500px){
+    header .icon-rooms-cart ,header .dark-mode{
+        left: 140%;
+    }
+}@media screen and (max-width: 500px){
+    header .icon-rooms-cart{
+        left: 120%;
+    }header .dark-mode{
+        left: 80%;
+    }
+}@media screen and (max-width: 440px){
+    header .dark-mode{
+        left: 60%;
+    }
+    .roomsTab{
+        width: 100vw;
+    }.roomsTab .close{
+        width: 300px;
+    }.roomsTab h1{
+        scale: 0.85;
+    }.roomsTab .RoomsList{
+        scale: 1;
+    }.roomsTab .RoomsList .room{
+        scale: 0.85;
+        margin-left: 0%;
+    }
+}@media screen and (max-width: 320px){
+    header .dark-mode{
+        left: 30%;
+    }header .icon-rooms-cart{
+        left: 90%;
+    }
+    .roomsTab{
+        width: 100vw;
+    }.roomsTab .close{
+        width: 300px;
+    }.roomsTab h1{
+        scale: 0.85;
+    }.roomsTab .RoomsList{
+        scale: 1;
+        margin-left: -10%;
+    }.roomsTab .RoomsList .room{
+        scale: 0.75;
+    }
+}
+
+/* COLORS : e0ab40 [GOLD]
+          : 0b5fad [Smooth Blue]
+*/

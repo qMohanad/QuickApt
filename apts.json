@@ -1,0 +1,87 @@
+[
+    {
+        "id": 1,
+        "img": "images/apt_1.jpg",
+        "apt": 32,
+        "rooms": 4,
+        "price": "8,000",
+        "price_n": 8000,
+        "likes": 2,
+        "views": 20,
+        "tags":[
+            "3th Floor",
+            "Full Services",
+            "Close to Mid-City"
+        ]
+    },{
+        "id": 2,
+        "img": "images/apt_2.jpg",
+        "apt": 33,
+        "rooms": 3,
+        "price": "7,200",
+        "price_n": 7200,
+        "likes": 20,
+        "views": 2,
+        "tags":[
+            "2th Floor",
+            "Not Full Services",
+            "Luxury Interior"
+        ]
+    },{
+        "id": 3,
+        "img": "images/apt_3.jpg",
+        "apt": 34,
+        "rooms": 4,
+        "price": "8,500",
+        "price_n": 8500,
+        "likes": 20,
+        "views": 2,
+        "tags":[
+            "4th Floor",
+            "Full Services",
+            "Bad Transfer Services"
+        ]
+    },{
+        "id": 4,
+        "img": "images/apt_4.jpg",
+        "apt": 35,
+        "rooms": 2,
+        "price": "6,000",
+        "price_n": 6000,
+        "likes": 20,
+        "views": 2,
+        "tags":[
+            "1th Floor",
+            "Full Services",
+            "Good Interior"
+        ]
+    },{
+        "id": 5,
+        "img": "images/apt_4.jpg",
+        "apt": 35,
+        "rooms": 2,
+        "price": "6,000",
+        "price_n": 6000,
+        "likes": 20,
+        "views": 2,
+        "tags":[
+            "3th Floor",
+            "Full Services",
+            "Good Interior"
+        ]
+    },{
+        "id": 6,
+        "img": "images/2.jpg",
+        "apt": 35,
+        "rooms": 2,
+        "price": "6,000",
+        "price_n": 6000,
+        "likes": 20,
+        "views": 2,
+        "tags":[
+            "3th Floor",
+            "Full Services",
+            "Good Interior"
+        ]
+    }
+]
